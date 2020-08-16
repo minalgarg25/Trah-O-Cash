@@ -27,19 +27,19 @@ public class registration extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
          try {
-            cn=DriverManager.getConnection("jdbc:mysql://localhost/register","root","root");
+            cn=DriverManager.getConnection("jdbc:mysql://localhost/ravlog","Varun","Varun@2998");
             stmt=(Statement) cn.createStatement();
             
         } catch (SQLException ex) {
              System.out.println(ex.getMessage());
         }
-         try {
+         /*try {
             con=DriverManager.getConnection("jdbc:mysql://localhost/login","root","root");
             st=(Statement) con.createStatement();
             
         } catch (SQLException ex) {
              System.out.println(ex.getMessage());
-        }
+        }*/
     }
 
     /**
@@ -244,10 +244,9 @@ public class registration extends javax.swing.JFrame {
         System.out.println(a+b+d+v);  
         try{
             stmt.executeUpdate("insert into signup values("
-                        + "'" + a + "'"
+                        + "'" + b + "'"
                         + ",'" + c + "'"
-                        + ",'" + d + "'"
-                   
+                                           
                         + ",'" + v + "')");
             
             
@@ -259,7 +258,7 @@ public class registration extends javax.swing.JFrame {
             st.executeUpdate("insert Into logit values("
                         + "'" + b + "'"
                         + ",'" +v+ "')");
-            
+            JOptionPane.showMessageDialog(null,"Registration Done");
             
         }
         catch (SQLException ex) {
